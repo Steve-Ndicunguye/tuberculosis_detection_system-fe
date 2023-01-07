@@ -32,7 +32,7 @@ function login(){
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8'})
     }
 
-    fetch("http://localhost:5000/login/loginUser", sendData)
+    fetch("https://tuberculosis-detection-system.cyclic.app/login/loginUser", sendData)
     .then(response => response.json())
     .then((fetchedData)=>{
         console.log(fetchedData)
