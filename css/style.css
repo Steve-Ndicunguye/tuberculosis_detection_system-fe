@@ -69,6 +69,30 @@
     padding: 20px 0 10px; 
 }
 
+div.iframeBox{
+    padding: 10px;
+    
+}
+
+div.whiteBackground{
+    background-color: white;
+    width: 100px;
+    height: 85px;
+    position: absolute;
+    right: 620px;
+    top: 250px;
+}
+
+iframe{      
+    display: block; 
+    height: 100vh; 
+    width: 70%;   
+    margin: auto;
+    border: none;
+    background: white;
+    overflow-y: hidden;
+}
+
 /* div.preNavLogin h5 a{
    
     font-size: 1vw;
