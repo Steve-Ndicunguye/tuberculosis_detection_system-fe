@@ -61,8 +61,7 @@
     </div>
     <!-- Navbar End -->
         <div class="text-center mx-auto mb-5 scanTitle" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Scan</h5>
-            <h1 class="display-4">Scan Patients</h1>
+            <h1 class="display-4 scanPatientsTitle">Scan Patients</h1>
         </div>
 
         <div class="whiteBackground">
@@ -75,9 +74,81 @@
 
        </div>
 
-        
+       <div class="text-center mx-auto mb-5 scanTitle" style="max-width: 500px; margin-top: -100px">
+        <h1 class="display-4 scanPatientsTitle">Patients Results</h1>
+       </div>
 
+       <div class="container containerForm">  
+		<form class="contact" action="" method="post" id="resultForm">
+	
+				<div class="col50 colleft" style="margin-bottom: 20px; margin-top: 10px;">
+                    <div class="wd50">
+						<label name="">Patient name:</label>
+						<input placeholder="Patient name" id="patientName" type="text" required autofocus>
+					</div>
+					
+				</div>
+				<div class="col50 colright" style="margin-bottom: 20px; margin-top: 10px;">
+                    <div class="wd50">
+						<label name="">Doctor Consulted:</label>
+						<input placeholder="Doctor name" id="doctorName" type="text" required autofocus>
+					</div>
+					
+				</div>
 
+			
+			<div class="col50 colleft">
+				<div class="wd50">
+					<label name="">Result:</label>
+						<select id="patientResult">
+                            <option value=" ">Negative</option>
+							<option value=" ">Positive</option>
+						</select>
+				</div>
+			
+			</div>
+
+			<div class="col50 colright">
+				<div class="wd100">
+					<label name="">Stage:</label>
+						<select id="patientStage">
+                            <option value=" ">Stage 1</option>
+							<option value=" ">Stage 2</option>
+							<option value=" ">Stage 3</option>
+						</select>
+				</div>
+	
+			</div>
+			
+			<div class="wd100"><hr></div>
+			
+			<div class="wd100">
+				<p><strong style="font-size: 17px;">Proposed Medications</strong></p>
+			</div>
+
+			<div class="wd100 question-checkbox">
+			   <textarea id="patientMedications" class="medicationField" placeholder="Add medications here..." required></textarea>
+			</div>
+
+            <div class="wd100" style="margin-top: 20px;">
+                <p><strong style="font-size: 17px;">Description:</strong></p>
+            </div>
+			<div class="wd100 question-checkbox"  style="margin-bottom: 20px;">
+				<textarea id="patientDescription" class="medicationField" placeholder="Add description here..." required></textarea>
+			</div>
+			
+			<div class="wd100">
+				<button name="submit" type="submit" id="saveResult" data-submit="...Sending">Save Result</button>
+			</div>
+		</form>
+	</div>
+
+    <div class="popupBox" id="popupBoxSavedResult">
+        <img src="./img/successLogo.png" alt="">
+        <h2>Done!</h2>
+        <p>Result saved successfully!</p>
+        <button type="submit" class="cancel" onclick="closePopup()">Ok</button>
+    </div>
 
         <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light mt-5 py-5">
@@ -147,6 +218,7 @@
     <script src="js/main.js"></script>
     <script src="js/loggedInUser.js"></script>
     <script src="js/logout.js"></script>
+    <script src="js/saveResult.js"></script>
 </body>
 
 </html>

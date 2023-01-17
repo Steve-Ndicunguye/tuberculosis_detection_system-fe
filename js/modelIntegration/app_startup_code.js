@@ -18,7 +18,7 @@ function predictOnLoad() {
 let model;
 (async function () {
 	
-	model = await tf.loadModel('http://tb.test.woza.work/model_tb_1/model.json');
+	model = await tf.loadModel('https://tb.test.woza.work/model_tb_1/model.json');
 	$("#selected-image").attr("src", "http://tb.test.woza.work/assets/tb_image.jpg");
 	
 	$('.progress-bar').hide();
