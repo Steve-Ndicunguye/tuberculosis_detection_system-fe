@@ -70,7 +70,7 @@
 
        <div class="iframeBox">
 
-        <iframe scrolling="no" id="myIframe"  src="http://tb.test.woza.work/" frameborder="0"></iframe>
+        <iframe scrolling="no"  src="http://tb.test.woza.work/" frameborder="0"></iframe>
 
        </div>
 
@@ -219,14 +219,6 @@
     <script src="js/loggedInUser.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/saveResult.js"></script>
-
-    <script>
-        function redirectIframe() {
-          var iframe = document.getElementById("myIframe");
-          iframe.contentWindow.postMessage("redirect", "http://tb.test.woza.work/");
-        }
-        redirectIframe()
-      </script>
 </body>
 
 </html>
