@@ -14,7 +14,7 @@ let getSingleUser= async(userId) => {
 
 
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/register/getSingleUser/'+userId, getOptions)
+    let response = await fetch('https://tuberculosis-detection-system.cyclic.app/register/getSingleUser/'+userId, getOptions)
     const fetchSingleUser = await response.json();
     console.log(fetchSingleUser)
 
@@ -45,7 +45,7 @@ async function getUser() {
 
 
 
-    let response = await fetch('https://ernestruzindana-be.cyclic.app/register/getSingleUser/'+userId, getOptions)
+    let response = await fetch('https://tuberculosis-detection-system.cyclic.app/register/getSingleUser/'+userId, getOptions)
     const fetchSingleUser = await response.json();
     hideChangeRoleLoader()
     document.title = "Ernest Ruzindana | Dashboard"
@@ -69,7 +69,7 @@ roleMessage.style.display = "none";
 roleSubmitData.addEventListener("click", (event) =>{
     event.preventDefault();
     roleMessage.style.display = "block";   
-    roleMessage.innerHTML = `<img src="../images/Spinner.gif" alt="Loading..." width="50px" height="50px">`
+    roleMessage.innerHTML = `<img src="../img/Spinner.gif" alt="Loading..." width="50px" height="50px">`
     document.title = "Loading..."
     updateRole();
 });
@@ -90,7 +90,7 @@ function updateRole() {
         headers: new Headers({'Content-Type': 'application/json; charset=UTF-8', 'auth_token': JSON.parse(sessionStorage.getItem('token'))}),
      };
      
-fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleId, UserRequestOptions,)
+fetch('https://tuberculosis-detection-system.cyclic.app/register/assignUserRole/'+userRoleId, UserRequestOptions,)
 .then(response => response.json())
 .then((roleFetchedData)=>{
     console.log(roleFetchedData)
@@ -98,7 +98,7 @@ fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleI
     if (roleFetchedData.successMessage){
         roleMessage.style.color = "green"
         roleMessage.innerHTML = roleFetchedData.successMessage
-        document.title = "Ernest Ruzindana | Dashboard"
+        document.title = "Tuberculosis Detection System | Dashboard"
         setTimeout(()=>{location = "assignRole.html"}, 2000)
         
     }
@@ -106,20 +106,20 @@ fetch('https://ernestruzindana-be.cyclic.app/register/assignUserRole/'+userRoleI
     else if (roleFetchedData.message){
         roleMessage.style.color = "red"
         roleMessage.innerHTML = roleFetchedData.message
-        document.title = "Ernest Ruzindana | Dashboard"
+        document.title = "Tuberculosis Detection System | Dashboard"
     }
 
     else if (roleFetchedData.unauthorisedError){
         roleMessage.style.color = "red"
         roleMessage.innerHTML = roleFetchedData.unauthorisedError
-        document.title = "Ernest Ruzindana | Dashboard"
+        document.title = "Tuberculosis Detection System | Dashboard"
         setTimeout(()=>{location = "assignRole.html"}, 3000)
     }
 
     else {
         postMessage.style.color = "red"
         postMessage.innerHTML = roleFetchedData.message
-        document.title = "Ernest Ruzindana | Dashboard"
+        document.title = "Tuberculosis Detection System | Dashboard"
     }
 })
         

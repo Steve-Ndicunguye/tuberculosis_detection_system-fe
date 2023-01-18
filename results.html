@@ -32,6 +32,9 @@
 
 <body>
 
+    <div id="allusers_preloader"></div>
+    <script src="js/allUsersPreloader.js"></script>
+
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top bg-white shadow-sm">
         <div class="container">
@@ -65,7 +68,6 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Results</h5>
                 <h1 class="display-4">Patients Results</h1>
             </div>
             <div class="row g-5" id="allPatientsResults">
@@ -74,6 +76,65 @@
         </div>
     </div>
     <!-- Services End -->
+
+        
+        <div class="popupBoxResult" id="popupBoxSingleResult">
+            <h2>Patient Results</h2>
+                <div class="col50 colleft" style="margin-bottom: 20px; margin-top: 10px;">
+                    <div class="wd50">
+                        <label name="">Patient name:</label>
+                        <p id="patientNameDetails"></p>
+                    </div>
+                    
+                </div>
+                <div class="col50 colright" style="margin-bottom: 20px; margin-top: 10px;">
+                    <div class="wd50">
+                        <label name="">Doctor Consulted:</label>
+                        <p id="doctorNameDetails"></p>
+                    </div>
+                    
+                </div>
+
+            
+            <div class="col50 colleft">
+                <div class="wd50">
+                    <label name="">Result:</label>
+                    <span id="patientResultDetails"></span>
+                </div>
+            
+            </div>
+
+            <div class="col50 colright">
+                <div class="wd100">
+                    <label name="">Stage:</label>
+                    <span id="patientStageDetails"></span>
+                </div>
+
+            </div>
+            
+            <div class="wd100" style="background-color: white !important;"><hr></div>
+            
+            <div class="wd100">
+                <p><strong style="font-size: 17px;">Proposed Medications</strong></p>
+            </div>
+
+            <div class="wd100 question-checkbox" style="padding: 10px;" id="proposedMedicationsDetails">
+                
+            </div>
+
+            <div class="wd100" style="margin-top: 20px;">
+                <p><strong style="font-size: 17px;">Description:</strong></p>
+            </div>
+            <div class="wd100 question-checkbox"   style="margin-bottom: 20px; padding: 10px;" id="doctorDescriptionDetails">
+                
+            </div>
+            
+            <div class="resultButtons">
+                <button type="submit" class="closeResult" onclick="closePopupResult()">Close</button>
+                <button type="submit" class="cancel" onclick="printResult()">Print result</button>
+            </div>
+            
+    </div>
 
 
         <!-- Footer Start -->
@@ -145,6 +206,8 @@
     <script src="js/loggedInUser.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/getAllResults.js"></script>
+    <script src="js/getSingleResult.js"></script>
+    
 </body>
 
 </html>

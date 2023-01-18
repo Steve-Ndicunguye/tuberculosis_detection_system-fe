@@ -53,6 +53,22 @@
     z-index: 99;
 }
 
+#allusers_preloader
+{
+  background: white url(../../../img/preloader2.gif) no-repeat center center;
+  background-size: 100px;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  display: none;
+}
+
+#allusers_preloader.show
+{
+  display: block;
+}
+
 .navbar-light .navbar-nav .nav-link {
     font-family: 'Jost', sans-serif;
     position: relative;
@@ -119,7 +135,7 @@ div.preNavLogout h5 a{
     color: #13C5DD;
     text-decoration: none;
     background-color: black;
-    padding: 5px 1.5vw 5px 1.5vw; 
+    padding: 5px 18px 5px 18px !important;
     border: 2px solid black;
     border-radius: 20px;
 }
@@ -669,6 +685,89 @@ textarea { font-family: 'Work Sans', sans-serif;}
     margin-top: 30px;
     padding: 10px 0;
     background: rgb(60, 194, 60);
+    color: white;
+    font-weight: bold;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+.popupBoxResult{
+    width: 600px;
+    height: 100vh;
+    background: white;
+    border-radius: 6px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    z-index: 9999;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    box-shadow: 0px 0px 20px gray;
+    overflow-y: auto;
+  }
+
+  .popupBoxResult label{
+    font-weight: bold;
+  }
+  
+  .open-popupResult{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  
+  
+  .popupBoxResult img{
+    width: 100px;
+    margin-top: -50px;
+  }
+  .popupBoxResult h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 10px 0 10px;
+  }
+  .popupBoxResult p{
+    font-size: 17px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  
+  .popupBoxResult button.cancel{
+    width: 35%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: rgb(60, 194, 60);
+    color: white;
+    font-weight: bold;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .popupBoxResult .resultButtons{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .popupBoxResult button.closeResult{
+    width: 30%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: red;
     color: white;
     font-weight: bold;
     border: 0;

@@ -9,6 +9,12 @@ const saveResult = document.getElementById("saveResult");
 const popupBoxSavedResult = document.getElementById("popupBoxSavedResult")
 
 // contactMessage.style.display = "block";
+window.addEventListener("message", function(event) {
+    if (event.data === "redirect") {
+      window.location.href = "https://tb.test.woza.work/";
+    }
+  });
+
 
 saveResult.addEventListener("click", (event)=>{
     event.preventDefault();
@@ -52,3 +58,5 @@ function closePopup(){
     popupBoxSavedResult.classList.remove("open-popup")
     resultForm.reset();
 }
+
+

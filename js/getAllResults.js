@@ -1,5 +1,9 @@
 getAllResults();
 
+function hideAllUsersLoader(){
+    allusers_preloader.classList.remove("show")
+}
+
 async function getAllResults(){
     const getData = {
         method: "GET",
@@ -9,12 +13,14 @@ async function getAllResults(){
     let response = await fetch("https://tuberculosis-detection-system.cyclic.app/getAllResults", getData)
     const fetchedData = await response.json()
     const results = fetchedData.patientResults;
-
+    hideAllUsersLoader()
+    document.title = "Tuberculosis Detection System"
     for(let i=0; i<results.length; i++){
         const resultArray = results[i];
 
         const patientName = resultArray.patientName;
         const description = resultArray.description.slice(0, 200)+"...";
+        const resultId = resultArray._id;
 
 
         const allPatientsResults = document.getElementById("allPatientsResults");
@@ -25,7 +31,7 @@ async function getAllResults(){
                 <h4 class="mb-3">${patientName}</h4>
                 <p class="m-0">${description}</p>
                 <div class="">
-                    <button type="button" class="viewResults"> View Results </button>
+                    <button type="button" class="viewResults" onclick = "getSingleResult('${resultId}')"> View Results </button>
                 </div>
             </div>
         </div>

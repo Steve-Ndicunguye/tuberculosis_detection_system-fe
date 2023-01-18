@@ -8,10 +8,10 @@ async function registeredUsers(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-  let response = await fetch("https://ernestruzindana-be.cyclic.app/register/getRegisteredUsers", getData)
+  let response = await fetch("https://tuberculosis-detection-system.cyclic.app/register/getRegisteredUsers", getData)
   const fetchedData = await response.json()
   hideAssignRoleLoader()
-  document.title = "Ernest Ruzindana | Dashboard"
+  document.title = "Tuberculosis Detection System | Dashboard"
     const users = fetchedData.RegisteredUsers;
     console.log(users);
    

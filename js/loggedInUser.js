@@ -1,4 +1,12 @@
+const preNavLogin = document.getElementById("preNavLogin");
+
 async function loggedInUser(){
+    
+    const preNavToken = sessionStorage.getItem("token")
+    if(preNavToken){
+        preNavLogin.innerHTML = `<img src="../../../img/spinner.gif" alt="" width="40px">`
+    }
+
     const getData = {
         method: "GET",
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
@@ -43,7 +51,7 @@ async function loggedInUser(){
         
         div.userProfile{
             position: fixed;
-            background-image: url(../img/main4.jpg);
+            background-image: url(../img/background4.jpg);
             background-position: center;
             border-radius: 10px;
             z-index: 3;
@@ -120,23 +128,23 @@ async function loggedInUser(){
         }
 
         div.switchAccount{
-            border-top: 1px solid #cba10a;
+            border-top: 1px solid white;
             padding-top: 20px;
             
         }
 
-        p.switchAccountLink{
-            border: 1px solid white; 
-            padding: 5px; 
+        p.switchAccountLink{ 
+            padding: 7px; 
             border-radius: 5px; 
             cursor: pointer; 
-            background: grey;
-        }
-
-        p.switchAccountLink:hover{
+            background: black;
+            font-size: 1.2em;
+          }
+          
+          p.switchAccountLink:hover{
             background: white;
             color: black;
-        }
+          }
 
         h3.names{
             color: white;
@@ -144,6 +152,7 @@ async function loggedInUser(){
             margin-top: 10px;
             margin-bottom: 10px;
         }
+
 
 
       </style>
@@ -160,15 +169,13 @@ async function loggedInUser(){
           ${fetchedData.firstName.charAt(0)}${fetchedData.lastName.charAt(0)}
           </div>
           <img src="https://tuberculosis-detection-system.cyclic.app/images/${fetchedData.imageLink}" class="inProfileImage" id="inProfileImage" alt="">
-
+          <br>
           <h3 class="names">${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
-          <a href="userProfile.html" class="ManageAccountLink">Edit profile</a>
-          <br><br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 20px;" id="adminPanel">
                 <p class="switchAccountLink"> 
-                    Admin Panel
+                <i class="fas fa-chalkboard-teacher"></i> </nbsp> Admin Panel
                 </p>
           </div>
 
@@ -179,7 +186,7 @@ async function loggedInUser(){
           </div>
 
           <div class="preNavLogout" style="margin-bottom: 20px;">
-              <h5><a href="" onClick="preNavLogoutUser()">Logout</a></h5>
+              <h5><a href="" onClick="preNavLogoutUser()"><i class="fa fa-sign-out"></i> </nbsp>Logout</a></h5>
           </div>
       </div>
       
@@ -211,7 +218,7 @@ async function loggedInUser(){
     
         //Go to admin panel
         adminPanel.addEventListener("click", ()=>{
-            location = "../Admin Dashboard/Home.html"
+            location = "../admin/dashboard.html"
         })
 
         const topProfileImage = document.getElementById("topProfileImage");
@@ -241,7 +248,7 @@ async function loggedInUser(){
 
 
 
-        const preNavLogin = document.getElementById("preNavLogin");
+  
         preNavLogin.style.display = "none"
 
         

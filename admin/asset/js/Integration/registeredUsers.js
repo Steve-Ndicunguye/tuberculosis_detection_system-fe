@@ -5,7 +5,7 @@ function hideRegisteredUsersLoader(){
 
 async function fetchRegisteredUsers(){
         
-    let response = await fetch("https://ernestruzindana-be.cyclic.app/register/getRegisteredUsers")
+    let response = await fetch("https://tuberculosis-detection-system.cyclic.app/register/getRegisteredUsers")
     
     const allUsers = await response.json(); 
     hideRegisteredUsersLoader()
@@ -22,6 +22,7 @@ async function fetchRegisteredUsers(){
         let lastName = usersArray.lastName;
         let userId = usersArray._id
         let email = usersArray.email;
+        let medicalCareer = usersArray.medicalCareer;
         let role = usersArray.role;
         
       if(1>0) {
@@ -31,6 +32,7 @@ async function fetchRegisteredUsers(){
             <tr id="${userId}">
                 <td>${firstName} ${lastName}</td>
                 <td>${email}</td>
+                <td>${medicalCareer}</td>
                 <td>${role}</td>
             </tr>
 

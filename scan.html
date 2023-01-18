@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
-
+    <script src="https://kit.fontawesome.com/557e6c8ef8.js" crossorigin="anonymous"></script>
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -70,7 +70,7 @@
 
        <div class="iframeBox">
 
-        <iframe scrolling="no"  src="http://tb.test.woza.work/" frameborder="0"></iframe>
+        <iframe scrolling="no" id="myIframe"  src="http://tb.test.woza.work/" frameborder="0"></iframe>
 
        </div>
 
@@ -219,6 +219,14 @@
     <script src="js/loggedInUser.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/saveResult.js"></script>
+
+    <script>
+        function redirectIframe() {
+          var iframe = document.getElementById("myIframe");
+          iframe.contentWindow.postMessage("redirect", "http://tb.test.woza.work/");
+        }
+        redirectIframe()
+      </script>
 </body>
 
 </html>

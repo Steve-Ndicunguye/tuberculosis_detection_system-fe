@@ -2,7 +2,7 @@ async function loggedInUser(){
     const preNavLogin = document.getElementById("preNavLogin");
     const preNavToken = sessionStorage.getItem("token")
     if(preNavToken){
-        preNavLogin.innerHTML = `<img src="../../../images/spinner.gif" alt="" width="40px">`
+        preNavLogin.innerHTML = `<img src="../../../img/spinner.gif" alt="" width="40px">`
     }
 
     const getData = {
@@ -10,7 +10,7 @@ async function loggedInUser(){
         headers: {"auth_token": JSON.parse(sessionStorage.getItem("token"))}
     }
 
-  let response = await fetch("https://ernestruzindana-be.cyclic.app/login/loggedInUser", getData)
+  let response = await fetch("https://tuberculosis-detection-system.cyclic.app/login/loggedInUser", getData)
   const fetchedData = await response.json()
   console.log(fetchedData)
 
@@ -46,8 +46,7 @@ async function loggedInUser(){
 
           <h3 class="adminNames">${fetchedData.firstName} ${fetchedData.lastName}</h3>
           <p class="userFetchedEmail" style="font-weight: 500;">${fetchedData.email}</p>
-          <a href="../userProfile.html" class="ManageAccountLink"><i class="far fa-edit"></i> </nbsp>Edit profile</a>
-          <br><br>
+          <br>
 
           <div class="switchAccount" style="font-weight: 500; padding: 35px 20px 20px; " id="adminPanel">
                 <p class="switchAccountLink"> 
