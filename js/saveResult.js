@@ -53,5 +53,7 @@ function closePopup(){
     popupBoxSavedResult.classList.remove("open-popup")
     resultForm.reset();
 }
+  
+
 
 

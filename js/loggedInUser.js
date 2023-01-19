@@ -16,11 +16,7 @@ async function loggedInUser(){
   const fetchedData = await response.json()
   console.log(fetchedData)
 
-
-   
-
-
-
+  preNavLogin.style.display = "none"
 
   const addProfile = document.getElementById("addProfile");
   addProfile.innerHTML = `
@@ -249,7 +245,7 @@ async function loggedInUser(){
 
 
   
-        preNavLogin.style.display = "none"
+        
 
         
 
