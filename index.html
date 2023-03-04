@@ -30,48 +30,18 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
-
-    <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-white shadow-sm">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>TB Detection System</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="#home" class="nav-item nav-link">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                        <a href="#services" class="nav-item nav-link">Service</a>
-                        <div class="preNavLogin nav-item nav-link" id="preNavLogin">
-                            <h5><a href="login.html">Login / Sign Up</a></h5>
-                        </div>
-        
-                        <div class="addProfile nav-item" id="addProfile">
-        
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <!-- Navbar End -->
-
+<body class="mainPage">
 
     <!-- Hero Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 hero-header" id="home">
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header-mainPage">
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Tuberculosis Detection System</h5>
-                    <h1 class="display-1 text-white mb-md-4">Best Healthcare Solution for your Lungs</h1>
+                    <h1 class="display-1 text-white mb-md-4">Detect Tuberculosis by uploading a chest image</h1>
                     <div class="pt-2">
-                        <a href="scan.html" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2" id="scanPatients">Scan New Patients</a>
-                        <a href="results.html" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">View Results</a>
+                        <a onclick="openPopupResult()" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">How the App Works</a>
+                        <a href="http://tb.test.woza.work/" target="_blank" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Use the App</a>
                     </div>
                 </div>
             </div>
@@ -79,198 +49,102 @@
     </div>
     <!-- Hero End -->
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded" src="img/main3.jpg" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="mb-4">
-                        <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
-                        <h1 class="display-4">Best Healthcare Solution for your Lungs</h1>
-                    </div>
-                    <p>This is a Lung Detection System where Doctors will be able to Scan Patients Lungs and Detect if they have Tuberculosis or some other related Lund diseases. 
-                        This is a Lung Detection System where Doctors will be able to Scan Patients Lungs and Detect if they have Tuberculosis or some other related Lund diseases.
-                        This is a Lung Detection System where Doctors will be able to Scan Patients Lungs and Detect if they have Tuberculosis or some other related Lund diseases </p>
-                    <div class="row g-3 pt-3">
-                        <div class="col-sm-3 col-6">
-                            <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-user-md text-primary mb-3"></i>
-                                <h6 class="mb-0">We work with Qualified<small class="d-block text-primary">Doctors</small></h6>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-6">
-                            <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-procedures text-primary mb-3"></i>
-                                <h6 class="mb-0">We can handle Emergency<small class="d-block text-primary">Services</small></h6>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-6">
-                            <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-microscope text-primary mb-3"></i>
-                                <h6 class="mb-0">We only provide Accurate<small class="d-block text-primary">results</small></h6>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-6">
-                            <div class="bg-light text-center rounded-circle py-4">
-                                <i class="fa fa-3x fa-ambulance text-primary mb-3"></i>
-                                <h6 class="mb-0">Our patients are offered Free<small class="d-block text-primary">Ambulance</small></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="popupBoxResult" id="popupBoxSingleResult">
+        <div class="wd100" style="margin-top: 20px;">
+            <p><strong style="font-size: 18px;">Attention!</strong></p>
         </div>
-    </div>
-    <!-- About End -->
-    
-
-    <!-- Services Start -->
-    <div class="container-fluid py-5" id="services">
-        <div class="container">
-            <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-                <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
-                <h1 class="display-4">Our Services</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-user-md text-white"></i>
-                        </div>
-                        <h4 class="mb-3">CRT Scan</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-procedures text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Lung Surgery</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-stethoscope text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Lung Checkup</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-ambulance text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Ambulance Service</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-pills text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Lung related Medicine</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon mb-4">
-                            <i class="fa fa-2x fa-microscope text-white"></i>
-                        </div>
-                        <h4 class="mb-3">Lung Transplant</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                        <a class="btn btn-lg btn-primary rounded-pill" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="wd100"   style="margin-bottom: 20px;" id="doctorDescriptionDetails">
+            This is a prototype. If you are really suffering from tuberculosis I advice acquiring serious medical assistance.
         </div>
-    </div>
-    <!-- Services End -->
 
-
-
-    
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
-                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, Kigali, Rwanda</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>lungdetection@gmail.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-primary me-3"></i>+250 788 619 790</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#home"><i class="fa fa-angle-right me-2"></i>Home</a>
-                        <a class="text-light mb-2" href="#about"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="#services"><i class="fa fa-angle-right me-2"></i>Our Services</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Popular Links</h4>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-light mb-2" href="#home"><i class="fa fa-angle-right me-2"></i>Home</a>
-                        <a class="text-light mb-2" href="#about"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                        <a class="text-light mb-2" href="#services"><i class="fa fa-angle-right me-2"></i>Our Services</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Newsletter</h4>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3 border-0" placeholder="Your Email Address">
-                            <button class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
-                    <h6 class="text-primary text-uppercase mt-4 mb-3">Follow Us</h6>
-                    <div class="d-flex">
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="wd100">
+            <p><strong style="font-size: 18px;">Description:</strong></p>
         </div>
+        <div class="wd100"   style="margin-bottom: 20px;" id="doctorDescriptionDetails">
+            This web app uses computer vision to detect tuberculosis (TB) on chest x-rays. Today there's still no quick test for TB like there is for Malaria and HIV. This is a step towards creating a test that can quickly identify whether or not a person is infected.
+        </div>
+
+        <div class="wd100">
+            <p><strong style="font-size: 18px;">Image format:</strong></p>
+        </div>
+        <div class="wd100"   style="margin-bottom: 20px;" id="doctorDescriptionDetails">
+            The app accepts chest x-ray images and images in jpg or png format.
+        </div>
+
+        <div class="wd100">
+            <p><strong style="font-size: 18px;">Limitations:</strong></p>
+        </div>
+        <div class="wd100"   style="margin-bottom: 20px;" id="doctorDescriptionDetails">
+            The Ai brain (model) that powers the app was trained using only 800 x-ray images. This is a very small dataset by deep learning standards. Therefore, even though the scores during testing are reasonably good, I'm not sure how well this model will perform under real-world conditions. 
+            Also, the prediction accuracy could be affected by factors like x-ray machine type, varying image lighting conditions, damaged x-ray images (e.g. pen marks) and other factors.
+        </div>
+
+        <div class="wd100">
+            <p><strong style="font-size: 18px;">Test with Sample Images</strong></p>
+            <p style="font-size: 16px;">These are some images I pulled from the internet, feel free to right click on any image to save it on your device.</p>
+        </div>
+        <div class="wd100 question-checkbox" style="padding: 10px;" id="proposedMedicationsDetails">
+            <section class="gallery-sec sec-pad">
+                <div class="container">
+                <div id="gf-BtnContainer" class="filter">
+                    <button class="gf-btn gf-btn-active" onclick="filterSelection('bollywood')">Normal Lungs</button>
+                    <button class="gf-btn" onclick="filterSelection('hollywood')">Tuberculosis Infected Lungs</button>
+                </div>
+            
+                <!-- Gallery Grid Images -->
+                <div class="gallery sets">
+            
+                    <div class="gf-column bollywood">
+                    <img src="img/Normal/Normal-11.png" />
+                    </div>
+            
+                    <div class="gf-column bollywood">
+                    <img src="img/Normal/Normal-12.png" />
+                    </div>
+            
+                    <div class="gf-column bollywood">
+                    <img src="img/Normal/Normal-3.png" />
+                    </div>
+            
+                    <div class="gf-column bollywood">
+                    <img src="img/Normal/Normal-5.png" />
+                    </div>
+            
+                    <div class="gf-column bollywood">
+                    <img src="img/Normal/Normal-7.png" />
+                    </div>
+            
+                    <div class="gf-column hollywood">
+                    <img src="img/Tuberculosis/Tuberculosis-67.png" />
+                    </div>
+            
+                    <div class="gf-column hollywood">
+                    <img src="img/Tuberculosis/Tuberculosis-2.png" />
+                    </div>
+            
+                    <div class="gf-column hollywood">
+                    <img src="img/Tuberculosis/Tuberculosis-3.png" />
+                    </div>
+            
+                    <div class="gf-column hollywood">
+                    <img src="img/Tuberculosis/Tuberculosis-4.png" />
+                    </div>
+            
+                    <div class="gf-column hollywood">
+                    <img src="img/Tuberculosis/Tuberculosis-16.png" />
+                    </div>
+            
+                </div>
+            
+                </div>
+            </section>             
+        </div>
+
+        <div class="resultButtons">
+            <button type="submit" class="closeResult" onclick="closePopupResult()">Close</button>
+        </div>
+        
     </div>
-
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -285,8 +159,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/loggedInUser.js"></script>
-    <script src="js/logout.js"></script>
+    <script src="js/aboutTheApp.js"></script>
 </body>
 
 </html>
